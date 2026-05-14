@@ -450,7 +450,7 @@
   flex-direction: column;
   gap: 16px;
 }
-.calendar-grid-full { display: grid; grid-template-columns: repeat(7,1fr); gap: 12px; margin-top: 20px; } .calendar-weekday { text-align: center; padding: 12px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; } .calendar-box { min-height: 150px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 10px; transition: 0.25s; } .calendar-box:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.16); } .calendar-box.inactive { opacity: 0.25; } .calendar-number { font-size: 14px; font-weight: 700; color: white; } .stream-card { padding: 10px; border-radius: 12px; font-size: 12px; font-weight: 600; line-height: 1.3; } .stream-card.pink { background: rgba(255,63,164,0.15); border: 1px solid rgba(255,63,164,0.25); color: #ff6ec7; } .stream-card.purple { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.25); color: #c084fc; } .stream-card.cyan { background: rgba(34,211,238,0.15); border: 1px solid rgba(34,211,238,0.25); color: #67e8f9; } .stream-card.amber { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.25); color: #fcd34d; }
+```
 </style>
 </head>
 <body>
@@ -526,10 +526,7 @@
     🎓 Available Trainings
   </button>
 </div>
-
-    <button class="quick-btn chatbox" onclick="openModal('chatboxModal')"> 
-      💬 Chatbox 
-      /button>
+```
 
 
     <!-- KPI Cards -->
@@ -804,7 +801,42 @@ new Chart(ctx, {
 });
 </script>
 </body
-<!-- Calendar Modal --> <div class="modal" id="calendarModal"> <div class="modal-box" style="max-width:1200px;height:85vh;overflow:auto;"> <div class="modal-header"> <div> <div class="modal-title" style="font-size:24px;font-weight:700;"> 📅 Studio Streaming Calendar </div> <div style="margin-top:6px;color:rgba(255,255,255,0.55);font-size:13px;"> May 2026 • 18 Scheduled Streams </div> </div> <button class="close-modal" onclick="closeModal('calendarModal')"> ✕ </button> </div> <!-- Calendar Days --> <div class="calendar-grid-full"> <div class="calendar-weekday">Mon</div> <div class="calendar-weekday">Tue</div> <div class="calendar-weekday">Wed</div> <div class="calendar-weekday">Thu</div> <div class="calendar-weekday">Fri</div> <div class="calendar-weekday">Sat</div> <div class="calendar-weekday">Sun</div> <!-- WEEK 1 --> <div class="calendar-box inactive">27</div> <div class="calendar-box inactive">28</div> <div class="calendar-box inactive">29</div> <div class="calendar-box inactive">30</div> <div class="calendar-box"> <div class="calendar-number">1</div> <div class="stream-card pink"> Judy • 8PM </div> <div class="stream-card purple"> Lora • Training </div> </div> <div class="calendar-box"> <div class="calendar-number">2</div> <div class="stream-card cyan"> Samsam • 10PM </div> </div> <div class="calendar-box"> <div class="calendar-number">3</div> <div class="stream-card amber"> Team Stream </div> </div> <!-- WEEK 2 --> <div class="calendar-box"> <div class="calendar-number">4</div> <div class="stream-card pink"> Judy • Collab </div> </div> <div class="calendar-box"> <div class="calendar-number">5</div> <div class="stream-card purple"> Lora • 7PM </div> <div class="stream-card cyan"> Samsam • 11PM </div> </div> <div class="calendar-box"> <div class="calendar-number">6</div> </div> <div class="calendar-box"> <div class="calendar-number">7</div> <div class="stream-card amber"> Studio Meeting </div> </div> <div class="calendar-box"> <div class="calendar-number">8</div> <div class="stream-card pink"> Judy • 9PM </div> </div> <div class="calendar-box"> <div class="calendar-number">9</div> </div> <div class="calendar-box"> <div class="calendar-number">10</div> <div class="stream-card cyan"> Samsam • Event </div> </div> </div> </div> </div>
+<!-- Calendar Modal -->
+<div class="modal" id="calendarModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">📅 Studio Calendar</div>
+      <button class="close-modal" onclick="closeModal('calendarModal')">✕</button>
+    </div>
+
+    <div class="modal-content">
+      <div class="calendar-grid">
+        <div class="calendar-day">Mon</div>
+        <div class="calendar-day">Tue</div>
+        <div class="calendar-day">Wed</div>
+        <div class="calendar-day">Thu</div>
+        <div class="calendar-day">Fri</div>
+        <div class="calendar-day">Sat</div>
+        <div class="calendar-day">Sun</div>
+
+        <div class="calendar-date">1</div>
+        <div class="calendar-date">2</div>
+        <div class="calendar-date active">
+          3
+          <div class="calendar-event">Training</div>
+        </div>
+        <div class="calendar-date">4</div>
+        <div class="calendar-date active">
+          5
+          <div class="calendar-event">Collab Stream</div>
+        </div>
+        <div class="calendar-date">6</div>
+        <div class="calendar-date">7</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Wallet Modal -->
 <div class="modal" id="walletModal">
   <div class="modal-box">
